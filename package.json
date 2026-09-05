@@ -1,0 +1,13 @@
+{
+  "name": "voidstorm-aegis7",
+  "version": "5.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "python3 -m http.server 8765"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.9"
+  }
+}

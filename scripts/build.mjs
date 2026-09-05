@@ -1,0 +1,11 @@
+import {build} from 'esbuild';
+import {mkdir,readFile,writeFile,readdir,cp,rm} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');process.chdir(root);
+const embedded={};for(const name of await readdir('assets/models'))embedded[path.parse(name).name]=(await readFile('assets/models/'+name)).toString('base64');
+await writeFile('assets/models.js','window.VOIDSTORM_MODELS='+JSON.stringify(embedded)+';');
+await build({absWorkingDir:root,entryPoints:['src/game.js'],bundle:true,format:'iife',outfile:'game.bundle.js',target:['es2020'],minify:true,legalComments:'eof'});
+await rm('dist',{recursive:true,force:true});await mkdir('dist');
+for(const item of ['index.html','game.bundle.js','assets','src','licenses','THIRD_PARTY_ASSETS.md','.nojekyll'])await cp(item,'dist/'+item,{recursive:true});
+console.log('Built offline HTML and GitHub Pages static output in dist/');
