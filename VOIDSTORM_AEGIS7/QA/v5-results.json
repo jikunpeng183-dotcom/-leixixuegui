@@ -1,0 +1,135 @@
+[
+  {
+    "name": "已持有技能：配套属性轻度加权",
+    "pass": true
+  },
+  {
+    "name": "已持有属性：对应技能轻度加权",
+    "pass": true
+  },
+  {
+    "name": "两万次抽取：配套略高、保持随机、卡片不重复",
+    "pass": true,
+    "detail": {
+      "paired": 2979,
+      "other": 2432,
+      "ratio": 1.2249177631578947,
+      "duplicate": 0
+    }
+  },
+  {
+    "name": "进化配方显示已就绪",
+    "pass": true
+  },
+  {
+    "name": "进化卡权重为 1.4",
+    "pass": true
+  },
+  {
+    "name": "图谱列出 12 配方且暂停",
+    "pass": true
+  },
+  {
+    "name": "图谱返回保留原暂停状态",
+    "pass": true
+  },
+  {
+    "name": "战斗打开图谱后可恢复",
+    "pass": true
+  },
+  {
+    "name": "E 原地展开 3 秒屏障，冷却 12 秒",
+    "pass": true
+  },
+  {
+    "name": "壁垒主动脉冲造成伤害",
+    "pass": true
+  },
+  {
+    "name": "护盾吸收量记录到反击",
+    "pass": true
+  },
+  {
+    "name": "壁垒拦截高速穿越弹且累计反击",
+    "pass": true
+  },
+  {
+    "name": "3 秒结束释放反击并清空状态",
+    "pass": true
+  },
+  {
+    "name": "反击不会重复结算",
+    "pass": true
+  },
+  {
+    "name": "每 12 击杀触发角色被动",
+    "pass": true
+  },
+  {
+    "name": "被动真实增加 15% 伤害",
+    "pass": true
+  },
+  {
+    "name": "被动超频准时结束",
+    "pass": true
+  },
+  {
+    "name": "第 20 波结束前不提前生成 Boss",
+    "pass": true
+  },
+  {
+    "name": "600 秒生成大型最终 Boss，并停止杂兵围攻",
+    "pass": true,
+    "detail": {
+      "hp": 7440
+    }
+  },
+  {
+    "name": "重锤 1.5 秒预警期间无伤害",
+    "pass": true
+  },
+  {
+    "name": "离开红圈可躲避重锤",
+    "pass": true
+  },
+  {
+    "name": "重锤只击中预告位置，不追随 Boss",
+    "pass": true
+  },
+  {
+    "name": "三线裁决线间空隙可躲避",
+    "pass": true
+  },
+  {
+    "name": "三线裁决红线内实际造成伤害",
+    "pass": true
+  },
+  {
+    "name": "弹幕留下朝向预告目标的安全缺口",
+    "pass": true,
+    "detail": {
+      "bullets": 19
+    }
+  },
+  {
+    "name": "留在缺口中可避开整轮弹幕",
+    "pass": true
+  },
+  {
+    "name": "R 同时产生追踪弹与轨道轰击预警",
+    "pass": true
+  },
+  {
+    "name": "R 天罚阵列完成且清除序列",
+    "pass": true
+  },
+  {
+    "name": "图谱关闭后仍显示原三选一卡牌",
+    "pass": true
+  },
+  {
+    "name": "新增功能无控制台及运行错误",
+    "pass": true,
+    "detail": []
+  }
+]

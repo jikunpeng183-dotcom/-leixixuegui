@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>VOIDSTORM — AEGIS-7 / 零界守望</title>
+<link rel="stylesheet" href="src/base.css"><link rel="stylesheet" href="src/design.css"><link rel="stylesheet" href="src/upgrade.css">
+<meta name="theme-color" content="#0c141b"><link rel="icon" href="data:,">
+</head>
+<body>
+<div id="game"></div>
+<div id="menu" class="overlay">
+  <div class="menuWrap">
+    <div class="eyebrow"><i></i> ORBITAL DEFENSE DIVISION <span>07 / 单人行动</span></div>
+    <div class="brand">VOID<span>STORM</span></div><div class="missionKicker">零 界 守 望 <span>SECTOR 07</span></div>
+    <div class="subtitle">最后一道防线，由你接管。<br>在失控的轨道设施中生存 10 分钟，摧毁 OMEGA 核心。</div>
+    <div class="grid2">
+      <section class="panel loadoutPanel"><div class="panelTitle"><span>作战机体</span><span id="unlockText">单机验证机体</span></div><div id="chars" class="chars"></div></section>
+      <section class="panel launchPanel">
+        <div class="panelTitle"><span>01 / 部署任务</span><span class="liveDot">系统在线</span></div><h2>守住零界。</h2><p class="launchCopy">边移动，边射击。回收能量，选择升级，组合属于你的火力系统。</p>
+        <div class="panelTitle"><span>威胁等级</span><span>单机任务</span></div><div id="diffs" class="diffs"></div>
+        <div class="metaStats"><div class="statBox"><b id="metaCoins">0</b><span>CR</span></div><div class="statBox"><b id="metaKills">0</b><span>累计击杀</span></div><div class="statBox"><b id="metaRuns">0</b><span>任务次数</span></div></div>
+        <details class="upgrades"><summary>机库强化 <span id="metaPower">战术等级 0</span></summary><div id="shop" class="shop"></div></details>
+        <div class="startRow"><button id="startBtn" class="primary">部署 AEGIS-7 <span>↗</span></button><button id="resetBtn" class="secondary">重置存档</button></div>
+        <div id="assetStatus" class="assetStatus">机库自检中…</div><div class="sourceNote"><a href="THIRD_PARTY_ASSETS.md" target="_blank">开源素材与许可 ↗</a> · 本地存档</div>
+      </section>
+    </div>
+    <div class="menuFooter"><span><kbd>W A S D</kbd> 移动 <kbd>T</kbd> 瞄准模式 <kbd>E / R</kbd> 技能</span><span>AEGIS-7 · SURVIVAL PROTOCOL <b>05.0</b></span></div>
+  </div>
+</div>
+<div id="hud" class="hidden">
+  <div class="topbar"><div class="hudLeft"><div class="capsule">击杀 <b id="kills">0</b></div><div class="capsule">LV <b id="level">1</b></div></div><div class="capsule timer" id="timer">10:00</div><div class="hudRight"><div class="capsule">CR <b id="coins">0</b></div><div class="capsule">⚡ <b id="charge">0</b>%</div></div></div>
+  <div id="bossWrap" class="bossWrap hidden"><div id="bossName" class="bossName">BOSS</div><div class="bossBar"><i id="bossHp"></i></div><div id="bossAttack"></div></div>
+  <div id="toast" class="toast">OBJECTIVE UPDATED</div><div id="healFlash" class="healFlash"></div>
+  <div class="playerStatus"><div class="statusLine"><span id="heroName">AEGIS-7</span><span id="hpText">100 / 100</span></div><div class="bar"><i id="hpBar"></i></div><div class="statusLine" style="margin-top:8px"><span>经验</span><span id="xpText">0 / 10</span></div><div class="bar xp"><i id="xpBar"></i></div></div>
+  <div id="coreStatus"></div><div class="buildLabel">技能卡构筑 · 最多 5 技能 / 6 属性</div><div id="weaponDock" class="weaponDock"></div><div id="skillDock" class="skillDock"><div id="skillECard" class="skillHudCard locked"><div class="skillHudTop"><span class="skillKey">E</span><span class="skillHudName">棱镜壁垒</span><span id="skillEState" class="skillHudState">LV3 解锁</span></div><div class="skillHudDesc">35% 护盾 · 3 秒拦截弹体与脉冲，吸收越多反击越强。</div></div><div id="skillRCard" class="skillHudCard locked"><div class="skillHudTop"><span class="skillKey">R</span><span class="skillHudName">离子超载</span><span id="skillRState" class="skillHudState">LV6 解锁</span></div><div class="skillHudDesc">天罚阵列 · 追踪齐射 + 轨道轰击 + 九米终末冲击。</div></div></div>
+  <div class="objective"><h4 id="zoneName">中央部署平台</h4><div id="waveLabel">WAVE 01 / 20</div><p id="mainObjective">坚守 10 分钟 · 摧毁 OMEGA</p><p id="quest1">□ 击杀 180 个异兽</p><p id="quest2">□ 完成 2 次地图事件</p><p id="quest3">□ 完成 1 次武器进化</p><div id="eventNav" class="hidden"></div></div>
+  <div class="enemyLegend">VOIDSTORM <span>// SECTOR 07</span></div><div id="passiveDock" class="passiveDock"></div><div id="damageLayer" class="damageLayer"></div><div id="aimLabel" class="aimLabel">瞄准：自动（T切换）</div>
+</div>
+<button id="pauseBtn" class="pauseHint hidden" aria-label="暂停任务">Ⅱ <span>ESC</span></button><button id="soundBtn" class="soundBtn" aria-label="切换声音">声音 开</button>
+<div id="mobile"><div id="moveJoy" class="joy moveJoy"></div><div id="aimJoy" class="joy aimJoy"></div><div class="mobileBtns"><button id="eBtn" class="skillBtn"><span id="eBtnText">E🔒</span><div class="coolMask"></div></button><button id="rBtn" class="skillBtn"><span id="rBtnText">R🔒</span><div class="coolMask"></div></button><button id="autoBtn" class="autoBtn">AUTO AIM</button></div></div>
+<div id="levelModal" class="modal hidden"><div class="modalCard"><div class="eyebrow">SYSTEM UPGRADE</div><div class="modalTitle">选择你的下一次进化。</div><div class="modalSub"><span class="repaired">✚ 装甲已修复 100%</span> · 选择 1 张卡牌继续作战</div><button id="levelGuideBtn" class="guideInline">查看全部进化配方 ↗</button><div id="choices" class="choices"></div><div id="buildSummary" class="buildSummary"></div></div></div>
+<div id="pauseModal" class="modal hidden"><div class="modalCard" style="width:min(450px,90vw);text-align:center"><div class="modalTitle">任务暂停</div><div class="modalSub">任务时钟已冻结，准备好后继续。</div><div class="controlsGuide"><p><b>E · 棱镜壁垒 / Lv3</b><br>获得 35% 护盾，3 秒拦截弹体并脉冲伤害，结束时爆发反击。初始 CD 12 秒。</p><p><b>R · 离子超载 / Lv6</b><br>击杀积累 100% 能量，展开 3.5 秒追踪齐射与轨道轰击，以九米终末冲击收尾。</p><p>被动 · 自适应核心：每 12 次击杀获得 10% 护盾，并提高 15% 伤害，持续 4 秒。<br>共 20 波，每波 30 秒；10 分钟后迎战 OMEGA。躲开红色预警，每次升级修复全部生命。</p></div><div class="startRow" style="justify-content:center"><button id="resumeBtn" class="primary">继续任务</button><button id="quitBtn" class="secondary">撤离</button></div></div></div>
+<div id="resultModal" class="modal hidden"><div class="modalCard"><div id="resultTitle" class="modalTitle">任务完成</div><div id="resultSub" class="modalSub"></div><div id="resultStats" class="resultStats"></div><div class="panelTitle"><span>本局 / 成就记录</span><span id="resultUnlock"></span></div><div id="achievementList" class="achievementList"></div><div class="startRow"><button id="againBtn" class="primary">再次出击</button><button id="menuBtn" class="secondary">返回机库</button></div></div></div>
+<button id="guideBtn" aria-label="查看进化图谱">◇ 进化图谱</button>
+<div id="evolutionModal" class="modal hidden" role="dialog" aria-modal="true" aria-label="进化图谱"><div class="modalCard evolutionCard"><div class="guideHead"><div><div class="eyebrow">EVOLUTION ATLAS / 12 RECIPES</div><div class="modalTitle">把火力连接起来。</div></div><button id="guideClose" class="secondary">返回 ×</button></div><p>技能 Lv.5 + 对应属性 Lv.3 → 升级时抽取进化卡。配套卡权重 +25%，进化卡 +40%；每次仍随机三选一。</p><div id="evolutionList"></div></div></div>
+<div id="loadingFallback" class="loadingFallback hidden">3D 引擎未能启动。请使用支持 WebGL 的浏览器，并开启硬件加速。确保完整解压游戏文件夹后再打开 index.html。</div>
+<script src="assets/models.js"></script><script src="game.bundle.js"></script>
+<script>
+setTimeout(()=>{if(!window.__voidstormReady)document.getElementById('loadingFallback').classList.remove('hidden')},9000);
+</script>
+</body></html>
