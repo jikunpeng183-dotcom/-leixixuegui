@@ -1,0 +1,85 @@
+[
+  {
+    "name": "触屏全屏按钮真实生效",
+    "pass": true
+  },
+  {
+    "name": "手机研究面板无横向溢出",
+    "pass": true
+  },
+  {
+    "name": "第十条局外研究可以滚动查看",
+    "pass": true
+  },
+  {
+    "name": "手机 E 屏障可释放",
+    "pass": true
+  },
+  {
+    "name": "手机 R 阵列可释放",
+    "pass": true
+  },
+  {
+    "name": "手机图谱显示 8 套配方",
+    "pass": true
+  },
+  {
+    "name": "竖屏第三张卡可选",
+    "pass": true
+  },
+  {
+    "name": "横屏卡牌和图谱可操作",
+    "pass": true
+  },
+  {
+    "name": "新版强化特效连续释放后资源回收稳定",
+    "pass": true,
+    "detail": {
+      "base": 191,
+      "counts": [
+        191,
+        191,
+        191,
+        191,
+        191
+      ]
+    }
+  },
+  {
+    "name": "siege 连招经过实际敌人更新循环执行",
+    "pass": true
+  },
+  {
+    "name": "prism 连招经过实际敌人更新循环执行",
+    "pass": true
+  },
+  {
+    "name": "tempest 连招经过实际敌人更新循环执行",
+    "pass": true
+  },
+  {
+    "name": "风暴主宰弹幕保留可见安全扇区",
+    "pass": true
+  },
+  {
+    "name": "半血过载只触发一次并强化核心旋转",
+    "pass": true
+  },
+  {
+    "name": "蓄电池研究实际增加 R 击杀充能 50%",
+    "pass": true
+  },
+  {
+    "name": "手机 Boss HUD 不遮挡全屏与技能按钮",
+    "pass": true
+  },
+  {
+    "name": "不支持全屏时明确提示，没有假全屏状态",
+    "pass": true
+  },
+  {
+    "name": "手机新增功能零运行错误",
+    "pass": true,
+    "detail": []
+  }
+]

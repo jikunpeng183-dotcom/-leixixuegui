@@ -1,0 +1,249 @@
+[
+  {
+    "name": "全屏按钮实际进入浏览器全屏",
+    "pass": true
+  },
+  {
+    "name": "F 快捷键退出全屏",
+    "pass": true
+  },
+  {
+    "name": "局外研究显示 10 条路线",
+    "pass": true
+  },
+  {
+    "name": "点击购买研究扣费且等级提升",
+    "pass": true
+  },
+  {
+    "name": "研究购买持久保存",
+    "pass": true
+  },
+  {
+    "name": "旧版四项研究存档无损迁移",
+    "pass": true
+  },
+  {
+    "name": "十条研究均影响真实属性或 R 充能",
+    "pass": true
+  },
+  {
+    "name": "局外研究禁止战斗中购买",
+    "pass": true
+  },
+  {
+    "name": "战斗技能与属性卡池均精简为 8 种",
+    "pass": true
+  },
+  {
+    "name": "所有属性最高 Lv3",
+    "pass": true
+  },
+  {
+    "name": "即使旧卡片再次触发也不能升到 Lv4",
+    "pass": true
+  },
+  {
+    "name": "200 轮：3/3 属性不再出现",
+    "pass": true
+  },
+  {
+    "name": "满足条件的进化卡每轮优先提供",
+    "pass": true
+  },
+  {
+    "name": "已进化技能从卡池移除",
+    "pass": true
+  },
+  {
+    "name": "满属性槽时找到不参与当前进化的置换目标",
+    "pass": true
+  },
+  {
+    "name": "满槽仍可出现缺失的配套属性",
+    "pass": true
+  },
+  {
+    "name": "置换只替换一个属性，槽位保持六个",
+    "pass": true
+  },
+  {
+    "name": "100 次实际选择：属性从不超过 3/3、技能不超过 Lv5",
+    "pass": true
+  },
+  {
+    "name": "后期构筑能实际完成进化",
+    "pass": true,
+    "detail": {
+      "evolutions": 5,
+      "weapons": {
+        "pulse": {
+          "lv": 5,
+          "timer": 0,
+          "evo": true
+        },
+        "blade": {
+          "lv": 5,
+          "timer": 0.08,
+          "evo": true
+        },
+        "orbital": {
+          "lv": 5,
+          "timer": 0.08,
+          "evo": true
+        },
+        "sentinel": {
+          "lv": 5,
+          "timer": 0.08,
+          "evo": true
+        },
+        "chain": {
+          "lv": 5,
+          "timer": 0.08,
+          "evo": true
+        }
+      },
+      "passives": {
+        "haste": 3,
+        "armor": 3,
+        "move": 3,
+        "power": 3,
+        "crit": 3,
+        "maxhp": 3
+      }
+    }
+  },
+  {
+    "name": "旧的高等级状态显示进度仍封顶 3/3",
+    "pass": true
+  },
+  {
+    "name": "siege 首领具有独立模型、名称、血量",
+    "pass": true
+  },
+  {
+    "name": "siege 第一段只产生预警",
+    "pass": true
+  },
+  {
+    "name": "siege 连招第二段具有新预警",
+    "pass": true
+  },
+  {
+    "name": "siege 连招第三段存在",
+    "pass": true
+  },
+  {
+    "name": "siege 连招结束留出输出间隙",
+    "pass": true
+  },
+  {
+    "name": "siege 半血升级四段连招",
+    "pass": true
+  },
+  {
+    "name": "siege 死亡取消未落地的攻击",
+    "pass": true
+  },
+  {
+    "name": "prism 首领具有独立模型、名称、血量",
+    "pass": true
+  },
+  {
+    "name": "prism 第一段只产生预警",
+    "pass": true
+  },
+  {
+    "name": "prism 连招第二段具有新预警",
+    "pass": true
+  },
+  {
+    "name": "prism 连招第三段存在",
+    "pass": true
+  },
+  {
+    "name": "prism 连招结束留出输出间隙",
+    "pass": true
+  },
+  {
+    "name": "prism 半血升级四段连招",
+    "pass": true
+  },
+  {
+    "name": "prism 死亡取消未落地的攻击",
+    "pass": true
+  },
+  {
+    "name": "tempest 首领具有独立模型、名称、血量",
+    "pass": true
+  },
+  {
+    "name": "tempest 第一段只产生预警",
+    "pass": true
+  },
+  {
+    "name": "tempest 连招第二段具有新预警",
+    "pass": true
+  },
+  {
+    "name": "tempest 连招第三段存在",
+    "pass": true
+  },
+  {
+    "name": "tempest 连招结束留出输出间隙",
+    "pass": true
+  },
+  {
+    "name": "tempest 半血升级四段连招",
+    "pass": true
+  },
+  {
+    "name": "tempest 死亡取消未落地的攻击",
+    "pass": true
+  },
+  {
+    "name": "连招重锤预警期间无伤害",
+    "pass": true
+  },
+  {
+    "name": "走出重锤预警可以躲避",
+    "pass": true
+  },
+  {
+    "name": "连招三线向锁定方向发射，反侧安全",
+    "pass": true
+  },
+  {
+    "name": "保留 E 壁垒与拦截状态",
+    "pass": true
+  },
+  {
+    "name": "E 仍累计吸收用于反击",
+    "pass": true
+  },
+  {
+    "name": "E 结束有多层冲击特效且状态释放",
+    "pass": true
+  },
+  {
+    "name": "R 终末冲击增强且序列正常结束",
+    "pass": true
+  },
+  {
+    "name": "保留角色 12 击杀被动",
+    "pass": true
+  },
+  {
+    "name": "进化图谱只显示 8 套配方",
+    "pass": true
+  },
+  {
+    "name": "真实卡片呈现进化选项，没有 4/3",
+    "pass": true
+  },
+  {
+    "name": "无控制台与运行错误",
+    "pass": true,
+    "detail": []
+  }
+]
